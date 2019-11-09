@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Ytdl = require('ytdl-core');
-const token = 'NjMzODI2NTI0NDQ1MDE2MDc0.Xa3Fmg.6gm1gORatuEFfsIEY3hmNHCVJDo';
+const token = 'NjMzODI2NTI0NDQ1MDE2MDc0.XcbHEw.coNFmmWim9vREwu86FXirB7OKM8';
 verdadedementira = false;
 const app = new Discord.Client();
 
