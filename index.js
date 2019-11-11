@@ -1,6 +1,7 @@
-const Discord = require('discord.js');
+const Discord  = require('discord.js');
+const Attachment = require('discord.js');
 const Ytdl = require('ytdl-core');
-const token = 'NjMzODI2NTI0NDQ1MDE2MDc0.XcbHEw.coNFmmWim9vREwu86FXirB7OKM8';
+const { token } = require("./token.js" );
 verdadedementira = false;
 const app = new Discord.Client();
 
@@ -9,24 +10,43 @@ app.on('ready', ()=>{
 });
 
 app.on('message', (msg) => {
+    if (msg.content === '!lul'){
+        msg.channel.send("Jeeeovváá!!!");
+    }
+
+    if (msg.content === '!oi'){
+        msg.channel.send(`Oi Mr.${msg.author.username}`);
+    }
+
+    if (msg.content === '!rip') {
+        const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
+        msg.channel.send(`${msg.author},`, attachment);
+    }
+
     if (msg.content === '!cola'){
         if (msg.member.voiceChannel){
             msg.member.voiceChannel.join();
             verdadedementira = true;
         }
+
         else{
             msg.channel.send("Entra nun canal Otario!!");
         }
+
     }
+
     else if (msg.content === '!sai'){
         if (msg.member.voiceChannel){
             msg.member.voiceChannel.leave();
             verdadedementira = false;
         }
+
         else{
             msg.channel.send('Cê nem ta nun canal maano!!!');
         }
+
     }
+
     else if (msg.content.startsWith('!toca ')){
         if (verdadedementira){
             let soltaoSom = msg.content.replace('!toca ','');
@@ -37,8 +57,11 @@ app.on('message', (msg) => {
             } else {
                 msg.channel.send('O link ta bugadoo manuu!!!!');
             }
+
         }
+
     }
+
 })
 
 app.login(token);
