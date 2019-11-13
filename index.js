@@ -47,6 +47,7 @@ app.on('message', (msg) => {
 
     else if (msg.content === '!sai'){
         if (msg.member.voiceChannel){
+            msg.channel.send("Deiicheee!! VLw FLws");
             msg.member.voiceChannel.leave();
             verdadedementira = false;
         }
