@@ -1,5 +1,4 @@
 const Discord  = require('discord.js');
-const Attachment = require('discord.js');
 const Ytdl = require('ytdl-core');
 const { token } = require("./token.js" );
 verdadedementira = false;
@@ -19,8 +18,14 @@ app.on('message', (msg) => {
     }
 
     if (msg.content === '!rip') {
-        const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
+        const attachment = new Discord.Attachment('https://i.imgur.com/w3duR07.png');
         msg.channel.send(`${msg.author},`, attachment);
+    }
+
+    if (msg.content === '!me') {
+        number = 4;
+        imageNumber = Math.floor(Math.random() * (number -1 +1)) + 1;
+        msg.channel.send({files: ["./images/" + imageNumber + ".png"]});
     }
 
     if (msg.content === '!cola'){
