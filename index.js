@@ -28,6 +28,11 @@ app.on('message', (msg) => {
         msg.channel.send({files: ["./images/" + imageNumber + ".png"]});
     }
 
+    if (msg.content === '!dab'){
+        attachment = new Discord.Attachment('./images/3.png');
+        msg.channel.send(`${msg.author},`, attachment);
+    }
+
     if (msg.content === '!cola'){
         if (msg.member.voiceChannel){
             msg.member.voiceChannel.join();
